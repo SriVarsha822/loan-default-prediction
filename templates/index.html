@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Default Prediction</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f6fb; color: #202538; }
+    .container { max-width: 760px; margin: 36px auto; padding: 24px; }
+    .card { background: white; padding: 28px; border-radius: 16px; box-shadow: 0 8px 28px #18223b12; }
+    h1 { margin-top: 0; }
+    .subtitle { color: #626b7d; line-height: 1.5; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; }
+    input, select { width: 100%; padding: 12px; border: 1px solid #cbd2df; border-radius: 8px; font-size: 15px; }
+    button { grid-column: 1 / -1; padding: 13px; border: 0; border-radius: 8px; background: #4f46e5; color: white; font-size: 16px; font-weight: 700; cursor: pointer; }
+    .result { margin-top: 22px; padding: 16px; border-radius: 10px; background: #eef2ff; }
+    .notice { margin-top: 20px; font-size: 12px; line-height: 1.5; color: #666f80; }
+    @media (max-width: 600px) { form { grid-template-columns: 1fr; } .container { padding: 14px; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Loan Default Prediction</h1>
+      <p class="subtitle">Enter applicant details to see the educational model's estimated default-risk category.</p>
+      <form method="post">
+        <div><label for="applicant_income">Monthly applicant income (₹)</label><input id="applicant_income" name="applicant_income" type="number" min="0" step="any" required></div>
+        <div><label for="loan_amount">Loan amount (₹)</label><input id="loan_amount" name="loan_amount" type="number" min="0" step="any" required></div>
+        <div><label for="loan_term">Loan term (months)</label><input id="loan_term" name="loan_term" type="number" min="0" step="any" required></div>
+        <div><label for="credit_history">Good credit history?</label><select id="credit_history" name="credit_history" required><option value="1">Yes</option><option value="0">No</option></select></div>
+        <div><label for="employment_years">Years employed</label><input id="employment_years" name="employment_years" type="number" min="0" step="any" required></div>
+        <div><label for="existing_debt">Existing monthly debt (₹)</label><input id="existing_debt" name="existing_debt" type="number" min="0" step="any" required></div>
+        <button type="submit">Predict Risk</button>
+      </form>
+      {% if prediction %}
+      <div class="result"><strong>Prediction: {{ prediction }}</strong>{% if message %}<p>{{ message }}</p>{% endif %}</div>
+      {% elif message %}
+      <div class="result">{{ message }}</div>
+      {% endif %}
+      <p class="notice"><strong>Disclaimer:</strong> This is a student demonstration using synthetic data, not a validated credit-scoring tool. Do not use it for actual lending or financial decisions.</p>
+    </section>
+  </main>
+</body>
+</html>
