@@ -1,42 +1,118 @@
-# Loan Default Prediction Using Machine Learning
+# 💰 Loan Default Prediction Using Machine Learning
 
-A student project starter using Python, Pandas, scikit-learn, Logistic Regression, and Flask.
+## 📌 Overview
 
-## Features
-- Trains a Logistic Regression classifier.
-- Performs an 80/20 train-test split.
-- Prints accuracy, classification report, and confusion matrix.
-- Provides a simple Flask web form for a prediction demo.
+This project is a Machine Learning web application that estimates loan default risk based on applicant details. It uses a Logistic Regression model and a Flask-based web interface to display risk predictions.
 
-## Important data note
-`data/loan_data.csv` is **synthetic demo data** generated only to help you run and understand the project. Results on synthetic data are not evidence of real-world performance. Before using this as a portfolio project, replace it with a suitable public dataset, document the source, retrain the model, and report the measured test metrics honestly.
+The application considers factors such as monthly income, loan amount, loan term, credit history, years employed, and existing monthly debt.
 
-## Run on Windows
-1. Install Python 3.10 or newer from https://www.python.org/downloads/ and enable **Add Python to PATH**.
-2. Extract this folder.
-3. Open the folder in VS Code.
-4. In VS Code choose Terminal → New Terminal.
-5. Run:
+---
 
-   ```powershell
-   python -m venv .venv
-   .venv\\Scripts\\Activate.ps1
-   python -m pip install -r requirements.txt
-   python train_model.py
-   python app.py
-   ```
+## 🚀 Features
 
-6. Open the local address printed in the terminal, usually http://127.0.0.1:5000
+- 📊 Loan Default Risk Prediction
+- 💰 Applicant Income and Loan Amount Analysis
+- 🏦 Credit History Evaluation
+- 💼 Employment and Existing Debt Consideration
+- 🤖 Machine Learning-Based Prediction
+- 🌐 User-Friendly Flask Web Interface
+- 📱 Simple and Responsive Design
 
-If PowerShell blocks activation, run this in the same terminal:
-`Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-Then activate the environment again.
+---
 
-## Upload to GitHub
-1. Create a new repository on GitHub named `loan-default-prediction`.
-2. Keep it **Public** if you want recruiters to open it; never upload passwords, tokens, or private data.
-3. In VS Code, open Source Control, initialize the repository if prompted, stage the project files, write a commit message such as `Add loan default prediction project`, and commit.
-4. Choose **Publish to GitHub** and follow the sign-in prompts.
-5. Open the repository page and copy its browser address. Paste that link into the form's **Link to it** field.
+## 🛠️ Technologies Used
 
-Do not upload the `.venv` folder or private/real applicant data.
+- Python
+- Flask
+- Scikit-learn
+- Pandas
+- NumPy
+- HTML5
+- CSS3
+- Git & GitHub
+
+---
+
+## 🤖 Machine Learning Algorithm
+
+**Logistic Regression**
+
+Logistic Regression is a supervised machine learning algorithm used for classification. In this project, it estimates the likelihood of loan default based on the applicant's input details.
+
+**Dataset:** Synthetic demo data generated for educational purposes.
+
+**Important:** Results from synthetic data do not demonstrate real-world model performance. The model must be evaluated using a suitable public dataset before practical use.
+
+---
+
+## 📂 Project Structure
+
+```text
+loan-default-prediction/
+│
+├── app.py
+├── train_model.py
+├── loan_default_model.joblib
+├── requirements.txt
+├── README.md
+│
+├── data/
+│   └── loan_data.csv
+│
+└── templates/
+    └── index.html
+```
+
+---
+
+## ⚙️ How to Run
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SriVarsha822/loan-default-prediction.git
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd loan-default-prediction
+```
+
+### 3. Install Dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Train the Machine Learning Model
+
+```bash
+python train_model.py
+```
+
+### 5. Run the Flask Application
+
+```bash
+python app.py
+```
+
+### 6. Open in Browser
+
+Open the local address displayed in the terminal, usually:
+
+http://127.0.0.1:5000
+
+---
+
+## ⚠️ Important Disclaimer
+
+This project is an educational demonstration using synthetic data. It is not a validated credit-scoring system and should not be used to make actual lending or financial decisions.
+
+---
+
+## 👩‍💻 Author
+
+**Varsha Chakravarthula**
+
+B.Tech — Artificial Intelligence and Machine Learning
